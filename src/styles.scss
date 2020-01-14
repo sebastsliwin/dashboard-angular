@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #293948;
+  min-height: 100vh;
+  max-height: 100vh;
+  font-family: Montserrat;
+}
+
+  .success {
+    background: #178019;
+  }
+
+  .error {
+    background: #970000;
+  }
