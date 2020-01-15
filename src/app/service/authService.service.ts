@@ -29,6 +29,7 @@ export class AuthService {
   }
 
   logout() {
+    window.location.reload();
     return this.fireAuth.auth.signOut();
   }
 }

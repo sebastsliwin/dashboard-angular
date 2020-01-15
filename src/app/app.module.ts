@@ -10,12 +10,15 @@ import { AngularFireModule } from 'angularfire2';
 import {environment} from '../environments/environment';
 import { DashboardComponent } from './cms/dashboard/dashboard.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -23,8 +26,9 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     AngularFireAuthModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

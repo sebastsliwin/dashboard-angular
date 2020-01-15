@@ -1,1 +1,74 @@
-<p>dashboard works!</p>
+<section class="dashboard">
+  <div class="panel">
+    <ul>
+
+      <a href="">
+        <li>
+          <i class="material-icons">home</i>
+        </li>
+      </a>
+      <a href="">
+        <li>
+          <i class="material-icons">supervisor_account</i>
+        </li>
+      </a>
+    </ul>
+  </div>
+  <div class="view">
+    <nav class="user-nav">
+      <div class="logout">
+        <i class="material-icons" (click)="openModal()">
+          drag_indicator
+        </i>
+
+        <div class="modal" *ngIf="modalIsOpen">
+          <span (click)="logout()">Log out</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content" *ngIf="weather; else loader">
+      <div class="card weather" *ngFor="let weather of weather">
+        <h2>{{weather?.name}}</h2>
+        <h4>{{weather?.main.temp}} <sup>&#176;</sup>C</h4>
+        <img src="http://openweathermap.org/img/w/{{weather?.weather[0].icon}}.png" alt="">
+      </div>
+
+      <div class="card calendar">
+        <h2>Today</h2>
+        <h2 class="date">{{date}}</h2>
+        <h3>{{userEmail}}</h3>
+      </div>
+
+      <div class="card customers">
+        <a routerLink="customers">
+          <i class="material-icons">people_alt</i>
+          <h2>Customers</h2>
+          <h2>{{count}}</h2>
+        </a>
+      </div>
+
+      <div class="card orders">
+        <a routerLink="orders">
+          <i class="material-icons">credit_card</i>
+          <h2>Orders</h2>
+          <h2>{{count + 300}}</h2>
+        </a>
+      </div>
+
+      <div class="card users">
+        <a routerLink="users">
+          <i class="material-icons">how_to_reg</i>
+          <h2>Users</h2>
+          <h2>{{count + 100}}</h2>
+        </a>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>
+
+<ng-template #loader>
+  <div class="loader">Loading...</div>
+</ng-template>
