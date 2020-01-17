@@ -3,14 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './cms/login/login.component';
 import {AuthGuardService} from './service/authGuard.service';
 import {DashboardComponent} from './cms/dashboard/dashboard.component';
-import {UsersComponent} from "./components/users/users.component";
+import {UsersComponent} from './components/users/users.component';
+import {DashboardHomeComponent} from './cms/dashboard-home/dashboard-home.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard',
-  component: DashboardComponent,
+  component: DashboardHomeComponent,
   canActivate: [AuthGuardService], children: [
       {
         path: 'users',

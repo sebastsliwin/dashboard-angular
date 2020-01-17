@@ -12,14 +12,19 @@
       text-align: center;
       list-style: none;
 
-      a {
-        color: #fff;
+      li {
+        margin: 25% 0;
 
-        li {
-          margin: 25% 0;
+        a {
+          color: #fff;
 
           i {
             font-size: 2.5em;
+            transition: .3s;
+
+            &:hover {
+              color: #979797;
+            }
           }
         }
       }
@@ -27,7 +32,7 @@
   }
 
   .view {
-    width: 90%;
+    width: 100%;
 
     .user-nav {
       position: relative;
@@ -63,70 +68,6 @@
             color: #fff;
             font-weight: 600;
           }
-        }
-      }
-    }
-
-    .content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      width: 100%;
-
-      .card {
-        margin: 1%;
-        flex-basis: 22%;
-        height: 215px;
-        text-align: center;
-        background: #293948;
-        border-radius: 2%;
-        box-shadow: 1px 1px 10px -5px;
-
-        &.calendar {
-          flex-basis: 44%;
-        }
-
-        h2 {
-          color: #fff;
-
-          &.date {
-            margin: 10% 0 0 0;
-            font-weight: 300;
-          }
-        }
-
-        a {
-          display: block;
-          height: 100%;
-          text-decoration: none;
-        }
-
-        &.customers {
-          background: #7bc901;
-        }
-
-        &.users {
-          background: linear-gradient(#a536f3, #7d72fc);
-        }
-
-        &.orders {
-          background: #6dbcdc;
-        }
-
-        &.customers,
-        &.users,
-        &.orders {
-          cursor: pointer;
-          transition: .3s;
-
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-
-        i {
-          margin: 3% 0;
-          font-size: 3em;
         }
       }
     }

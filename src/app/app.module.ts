@@ -12,13 +12,15 @@ import { DashboardComponent } from './cms/dashboard/dashboard.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { UsersComponent } from './components/users/users.component';
+import { DashboardHomeComponent } from './cms/dashboard-home/dashboard-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    UsersComponent
+    UsersComponent,
+    DashboardHomeComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

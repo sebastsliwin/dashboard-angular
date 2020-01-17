@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<app-dashboard *ngIf="router.url != '/login'; else login">
+</app-dashboard>
+
+<ng-template #login>
+  <app-login></app-login>
+</ng-template>
