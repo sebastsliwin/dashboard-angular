@@ -1,0 +1,310 @@
+span {
+  font-weight: bold;
+  color: #cea85c;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+.section-header {
+
+  h3 {
+    letter-spacing: 2px;
+  }
+}
+
+.banner {
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(36, 36, 35, .9)), url("/assets/img/background-banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #242423;
+
+  .back {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 6%;
+    text-align: center;
+    transition: .3s;
+
+    a {
+      color: #cea85c;
+      text-decoration: none;
+
+      i {
+        text-align: center;
+        transition: .3s;
+
+        &:hover {
+          color: #cea85c;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-size: .6em;
+      }
+    }
+  }
+
+  .main-nav {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    ul {
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      list-style: none;
+      white-space: nowrap;
+
+      li {
+        margin: 0 3%;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          transition: .4s;
+          text-transform: uppercase;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:hover {
+            color: #cea85c;
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    position: absolute;
+    padding: 2% 3%;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transform: translate(-50%, -50%);
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 40%;
+      left: -.5%;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: #cea85c;
+      animation: move 2s both;
+      transform: translateY(-40%);
+    }
+
+    h1 {
+      font-size: 3em;
+      opacity: .2;
+      animation: opacity 1s both;
+      animation-delay: .5s;
+    }
+
+    h3 {
+      font-size: 1.3em;
+    }
+  }
+}
+
+// about me
+.about-me {
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  background: #1f1f1f;
+  overflow: hidden;
+
+  .section-header {
+    text-align: center;
+
+    h3 {
+      padding: 2% 0;
+      margin: 0;
+      color: #af9049;
+      font-size: 1.5em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      height: 60px;
+      width: 1px;
+      background: #af9049;
+    }
+
+    .description {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: left;
+
+      img {
+        width: 30%;
+      }
+
+      .-content {
+        flex-basis: 50%;
+        text-align: justify;
+
+        ul {
+          padding: 0;
+          color: #fff;
+          font-weight: bold;
+
+          li {
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            line-height: 150%;
+          }
+        }
+      }
+
+      p {
+        color: #9b9b9b;
+        letter-spacing: 1px;
+        line-height: 150%;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// projects
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(15, 15, 14, 0.9);
+
+  .project {
+    font-size: 0;
+    flex-basis: 33.33%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      transition: .3s;
+
+      &:hover {
+        transform: scale(.9);
+      }
+    }
+  }
+
+  .description {
+    flex-basis: 66.66%;
+    color: #fff;
+
+    p {
+      padding: 5% 10%;
+      letter-spacing: 1px;
+      line-height: 200%;
+    }
+  }
+
+  .technologies {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .angular {
+      width: 10%;
+    }
+
+    img {
+      padding: 5%;
+    }
+  }
+}
+
+@keyframes move {
+  100% {
+    top: 40%;
+    left: 99%;
+  }
+}
+
+@keyframes opacity {
+  100% {
+    opacity: 1;
+  }
+}
+
+//RWD
+@media (max-width: 768px) {
+  .banner {
+
+    .main-nav {
+      bottom: 15%;
+    }
+  }
+
+  .about-me {
+    max-height: none;
+
+    .section-header {
+      .description {
+        flex-direction: column;
+
+        img {
+          width: 85%;
+        }
+
+        .-content {
+          padding: 10% 0;
+          width: 80%;
+          order: -1;
+
+          ul {
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+
+  .projects {
+
+    .project {
+      flex-basis: 100%;
+    }
+
+    .description {
+      flex-basis: 100%;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    .technologies {
+
+      .angular {
+        width: 20%;
+      }
+
+      img {
+        width: 15%;
+      }
+    }
+  }
+}

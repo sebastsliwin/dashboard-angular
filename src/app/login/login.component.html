@@ -1,0 +1,27 @@
+<section class="login">
+  <div class="icon-person">
+    <img src="/assets/img/person.png" alt="Person icon">
+  </div>
+
+  <div class="bgc"></div>
+  <h1>Hello to my dashboard. If you are first time here and you don't have account - please register</h1>
+  <h3 class="notification success" *ngIf="registerInfo">{{registerInfo}}</h3>
+  <h3 class="notification error" *ngIf="errorInfo">{{errorInfo}}</h3>
+  <form action="" class="login">
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" [(ngModel)]="credentials.email" name="email">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" [(ngModel)]="credentials.password" name="password">
+
+    <div class="buttons">
+      <button (click)="login()">
+        Sign in
+      </button>
+      <button (click)="register()">
+        Register
+      </button>
+    </div>
+  </form>
+</section>

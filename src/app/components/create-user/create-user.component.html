@@ -1,0 +1,16 @@
+<section class="new-user">
+  <h2>Add a new employee</h2>
+  <form #dataUser="ngForm" (ngSubmit)="addUser(dataUser)">
+    <h3 class="notification success" *ngIf="infoMessage">{{infoMessage}}</h3>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" ngModel required #name="ngModel">
+
+    <label for="salary">Salary</label>
+    <input type="number" id="salary" name="salary" ngModel required #salary="ngModel">
+
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" ngModel required #age="ngModel">
+
+    <button>Add</button>
+  </form>
+</section>

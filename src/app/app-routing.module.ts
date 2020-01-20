@@ -1,31 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {LoginComponent} from './cms/login/login.component';
+import {LoginComponent} from './login/login.component';
 import {AuthGuardService} from './service/authGuard.service';
-import {DashboardComponent} from './cms/dashboard/dashboard.component';
 import {UsersComponent} from './components/users/users.component';
-import {DashboardHomeComponent} from './cms/dashboard-home/dashboard-home.component';
+import {CreateUserComponent} from './components/create-user/create-user.component';
+import {DashboardHomeComponent} from './dashboard-home/dashboard-home.component';
+import {PortfolioComponent} from './portfolio/portfolio.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard',
   component: DashboardHomeComponent,
-  canActivate: [AuthGuardService], children: [
-      {
-        path: 'users',
-        component: UsersComponent
-      },
-      {
-        path: 'orders',
-        component: UsersComponent
-      },
-      {
-        path: 'customers',
-        component: UsersComponent
-      },
-    ]}
+  canActivate: [AuthGuardService]},
+  {path: 'users', component: UsersComponent},
+  {path: 'orders', component: UsersComponent},
+  {path: 'customers', component: UsersComponent},
+  {path: 'new', component: CreateUserComponent},
+  {path: 'portfolio', component: PortfolioComponent},
 ];
 
 @NgModule({

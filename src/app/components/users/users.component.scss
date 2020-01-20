@@ -1,0 +1,107 @@
+.users {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  width: 80%;
+
+  h2 {
+    margin: 1% 0 0 0;
+    color: #fff;
+  }
+
+  button {
+    padding: 1% 2%;
+    border-radius: 5%;
+    text-transform: uppercase;
+  }
+
+  .grid {
+    position: relative;
+
+    .paginator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(15%, -90%);
+      user-select: none;
+
+      i {
+        font-size: 3em;
+        cursor: pointer;
+
+        &:hover {
+          color: #ddd;
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin:50px auto;
+    }
+
+    th {
+      color: #afafaf;
+      font-weight: bold;
+    }
+
+    td, th {
+      padding: 10px;
+      color: #fff;
+      font-size: 18px;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+
+    @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+
+      table {
+        width: 90%;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+        border: 1px solid #ccc;
+        margin-bottom: 5%;
+      }
+
+      td {
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        color: #000;
+        font-weight: bold;
+      }
+
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .users {
+    h2 {
+      margin: 1% 0 0 5%;
+      font-size: 1.2em;
+    }
+  }
+}

@@ -3,24 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './cms/login/login.component';
+import { LoginComponent } from './login/login.component';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import {environment} from '../environments/environment';
-import { DashboardComponent } from './cms/dashboard/dashboard.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { UsersComponent } from './components/users/users.component';
-import { DashboardHomeComponent } from './cms/dashboard-home/dashboard-home.component';
+import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CreateUserComponent } from './components/create-user/create-user.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     UsersComponent,
-    DashboardHomeComponent
+    DashboardHomeComponent,
+    NavbarComponent,
+    SidebarComponent,
+    CreateUserComponent,
+    PortfolioComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

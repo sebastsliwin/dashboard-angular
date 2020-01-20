@@ -1,1 +1,36 @@
-<p>users works!</p>
+<ng-container *ngIf="(employee$ | async) as employees; else loader">
+  <section class="users">
+    <h2>List of the best employees</h2>
+    <div class="grid">
+      <div class="paginator">
+        <i class="material-icons" (click)="changeCard()">arrow_left</i>
+        <i class="material-icons" (click)="changeCard()">arrow_right</i>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID </th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let employee of employees.data | slice:sliceStart:sliceEnd">
+            <tr>
+              <td>{{employee.id}}</td>
+              <td>{{employee.employee_name}}</td>
+              <td>{{employee.employee_salary}}</td>
+              <td>{{employee.employee_age}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #loader>
+  <div class="loader">Loading...</div>
+</ng-template>

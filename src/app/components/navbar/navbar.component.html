@@ -1,0 +1,11 @@
+<nav class="user-nav">
+  <div class="logout">
+    <i class="material-icons" (click)="openModal()">
+      drag_indicator
+    </i>
+
+    <div class="modal" *ngIf="modalIsOpen">
+      <span (click)="logout()">Log out</span>
+    </div>
+  </div>
+</nav>

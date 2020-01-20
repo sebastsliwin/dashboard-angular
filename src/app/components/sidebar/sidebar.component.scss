@@ -1,0 +1,55 @@
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100vh;
+  box-shadow: -6px -4px 7px 5px #000;
+  z-index: 10;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+
+    li {
+      padding: 15% 0;
+      margin: 0;
+
+      a {
+        color: #fff;
+
+        i {
+          font-size: 2.5em;
+          transition: .3s;
+
+          &:hover {
+            color: #979797;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    position: fixed;
+    width: 15%;
+
+    ul {
+
+      li {
+        padding: 20% 0;
+
+        a {
+
+          i {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
